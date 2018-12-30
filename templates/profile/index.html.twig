@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crowdin - {{ controller_name }}{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-3 col-sm-12">
+            <img class="img-fluid rounded mb-3" src="https://www.digilowcost.com/wp-content/uploads/2014/12/booboo-lunette-professeur-1.jpg" alt="Profile Picture">
+            <h2 class="text-capitalize">{{ user.username }}</h2>
+            <h5>{{ user.email }}</h5>
+            <small class="text-muted">{{ user.description }}</small>
+            <hr class="mb-5">
+            <h5>Preferred Languages</h5>
+            {% for language in user.languages %}
+            <span class="badge badge-pill badge-success">{{ language.name }}</span>
+            {% endfor %}
+        </div>
+        <div class="col mt-5">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-toggle="tab" href="#home">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#profile">Activity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#">To Do</a>
+                </li>
+            </ul>
+            <hr class="mb-5">
+            <div id="myTabContent" class="tab-content mt-5">
+                <div class="tab-pane fade active show" id="home">
+                        <h1 class="text-center mb-5">Start by creating or joining a project</h1>
+                        <div class="card bg-light">
+                            <div class="card-body text-center row">
+                                <div class="col">
+                                    <button class="btn btn-outline-success">Create Project</button>
+                                    <p class="text-secondary mt-3">Create localization projects to make your product multilingual.</p>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-outline-success">Explore & Translate</button>
+                                    <p class="text-secondary mt-3">Join open projects to help translate or manage them. Private ones are joined by invitations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile">
+                </div>
+                <div class="tab-pane fade" id="dropdown1">
+                    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown2">profile
+                    <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

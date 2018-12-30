@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Language{% endblock %}
+
+{% block body %}
+    <div class="form-inline">
+        <h1>Edit Language</h1>
+        <div class="ml-auto">{{ include('language/_delete_form.html.twig') }}</div>
+    </div>
+    {{ include('language/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <div class="text-right">
+        <a href="{{ path('language_index') }}" class="btn btn-sm mt-5">back to list</a>
+    </div>
+{% endblock %}

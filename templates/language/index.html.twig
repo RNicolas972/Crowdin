@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Language index{% endblock %}
+
+{% block body %}
+    <h1>Language index</h1>
+
+    <table class="table table-sm table-hover mt-5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th class="text-right pr-5">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for language in languages %}
+            <tr>
+                <td>{{ language.id }}</td>
+                <td>{{ language.name }}</td>
+                <td class="text-right">
+                    <a href="{{ path('language_show', {'id': language.id}) }}" class="btn btn-sm btn-outline-info">show</a>
+                    <a href="{{ path('language_edit', {'id': language.id}) }}" class="btn btn-sm btn-outline-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('language_new') }}" class="btn btn-success mt-5">+ Create new</a>
+{% endblock %}
